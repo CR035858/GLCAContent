@@ -1,0 +1,51 @@
+<html>
+<head>
+<script>
+let x = 10;
+let y = 20;
+let text = "x * y";
+let result = eval(text);
+console.log(result);
+console.log(eval(20 / 10));
+console.log(eval(20 / 0));
+/*try
+{
+console.log(eval(2 //// 3));
+}
+catch(err)
+{
+console.log(err.message);
+}*/
+var content = "new cont";
+var expression = "";
+function disp()
+{
+document.getElementById('result').textContent = content || expression ;
+}
+function disp1()
+{
+//document.getElementById('result').textContent = content  ;
+document.getElementById('result').value = content  ;
+
+}
+function disp2()
+{
+
+document.getElementById('result').value = content;
+}
+/*function add => {
+var num1 = onClick(getElementById='me');
+let mysum = num1;
+console.log(mysum);
+}*/
+</script>
+</head>
+<body>
+<input type="text" id="result" />
+<input type="submit" value="click" onclick="disp()" >
+<input type="submit" value="click1" onclick="disp1()" >
+<input type="submit" value="click2" id="me" >
+<input type="submit" value="click3" onclick="disp2()">
+</body>
+
+</html>

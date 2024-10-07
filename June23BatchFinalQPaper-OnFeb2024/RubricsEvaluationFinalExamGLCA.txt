@@ -1,0 +1,15 @@
+REST API 25 marks Used for JUNE GLCA BATCH - Feb 2024
+Model 6
+Service Interface 2 + Service Implementation 4
+Controller 8
+Repository 4
+Naming Conventions/Coding Standards 1
+
+--
+BETTER ONE  CAN BE USED IN FUTURE
+
+Model [4]
+Service [2+6]
+Controller [8]
+Repository [3]
+Naming Conv + Coding Stds [2] 

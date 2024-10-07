@@ -1,0 +1,156 @@
+Short Answer Questions & Answers:
+
+Q1) Explain <div> and <head> tag in html. 
+ANSWER:
+In HTML, both <div> and <head> are fundamental tags with distinct purposes:
+
+<div> Tag:
+The <div> tag is one of the most commonly used tags in HTML, and it stands for "division" or "divider." Its primary purpose is to define a division or a section within an HTML document. It doesn't inherently represent any specific content or styling; instead, it serves as a container for other HTML elements, allowing you to group them together and apply styling or behavior to them collectively using CSS or JavaScript.
+Here's a basic example of how you might use the <div> tag:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<div>
+    <h1>This is a Heading</h1>
+    <p>This is a paragraph.</p>
+</div>
+
+<div>
+    <p>This is another paragraph.</p>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+</div>
+
+</body>
+</html>
+In this example, <div> tags are used to group different elements together.
+
+<head> Tag:
+The <head> tag is used to contain meta-information about an HTML document, such as its title, links to stylesheets, scripts, meta tags, and more. This information is not directly displayed on the web page but is essential for browsers and search engines to understand and properly render the document.
+Here's a basic example of how the <head> tag is used:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Content of the webpage goes here -->
+</body>
+</html>
+
+In this example, the <head> section contains various meta tags like charset and viewport, the document title, links to an external stylesheet (styles.css), and a JavaScript file (script.js). These meta-information elements are crucial for defining how the browser should interpret and present the content of the HTML document.
+
+=======================================================================================================
+Q2) Explain the terms primary key, foreign key, candidate key and super key in RDBMS.. 
+In relational database management systems (RDBMS), several key concepts are essential for understanding the structure and relationships within databases. Let's define each of these terms:
+
+Primary Key:
+
+A primary key is a column or a set of columns in a relational database table that uniquely identifies each row or record in that table.
+It must contain unique values for each row and cannot have NULL values.
+Typically, a primary key is designated when creating a table and is used to enforce entity integrity, ensuring the uniqueness and integrity of the data.
+Each table can have only one primary key.
+Foreign Key:
+
+A foreign key is a column or a set of columns in a relational database table that establishes a relationship with a primary key or a unique key in another table.
+It provides referential integrity, ensuring that the values in the foreign key column(s) match values in the primary key or unique key column(s) of the related table.
+Foreign keys are used to create relationships between tables in a relational database, enforcing data integrity and maintaining consistency across related tables.
+A table can have multiple foreign keys.
+Candidate Key:
+
+A candidate key is a set of one or more columns in a table that can uniquely identify each record in that table.
+Like a primary key, each candidate key must be unique and cannot contain NULL values.
+A table can have multiple candidate keys, but one of them is chosen as the primary key. The remaining candidate keys are referred to as alternate keys.
+The choice of primary key among candidate keys is often based on factors such as simplicity, stability, and performance.
+Super Key:
+
+A super key is a set of one or more columns in a table that uniquely identifies each record in that table.
+Unlike a candidate key, a super key may contain extra columns that are not necessary for uniqueness.
+Any subset of a super key is also a super key.
+Essentially, a candidate key is a minimal super key, meaning it is the smallest possible set of columns that uniquely identifies each record.
+In summary, primary keys uniquely identify records within a table, foreign keys establish relationships between tables, candidate keys are potential choices for primary keys, and super keys are sets of columns that uniquely identify records, potentially including more columns than necessary.
+
+========================================================================================================
+Q3) Write a short program which uses a lambda expression in the ArrayList's forEach() method to print every item in the list. Consider an ArrayList of any 5 elements.
+
+Here's a short Java program that uses a lambda expression in the forEach() method of an ArrayList to print every item in the list: 
+
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        // Create an ArrayList with 5 elements
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Apple");
+        list.add("Banana");
+        list.add("Orange");
+        list.add("Grapes");
+        list.add("Mango");
+
+        // Print every item in the list using forEach() with a lambda expression
+        list.forEach(item -> System.out.println(item));
+    }
+}
+This program creates an ArrayList with 5 elements (strings in this case), then uses the forEach() method with a lambda expression to iterate over each element in the list and print it to the console.
+========================================================================================================
+Q4) Write in brief about the Object class in Java. 
+
+In Java, the Object class is the root class for all classes. It is defined in the java.lang package, which is implicitly imported into all Java programs. Here are some key points about the Object class:
+
+Superclass: Every class in Java is either directly or indirectly a subclass of the Object class. If a class doesn't explicitly extend any other class, it implicitly inherits from Object.
+
+Methods: The Object class defines several methods that are inherited by all classes. Some of the most commonly used methods include:
+
+toString(): Returns a string representation of the object.
+equals(Object obj): Compares the current object with the specified object for equality.
+hashCode(): Returns a hash code value for the object.
+getClass(): Returns the runtime class of the object.
+notify(), notifyAll(), wait(): Methods used for inter-thread communication.
+Default Implementation: The methods in the Object class provide default behavior for all Java objects. However, these methods can be overridden in subclasses to provide custom behavior as needed.
+
+Useful for Generic Programming: Since all classes in Java inherit from Object, it's often used in generic programming scenarios where you want to operate on objects of any type without knowing their specific class beforehand.
+
+Commonly Overridden: While many methods in Object have default implementations that are sufficient for most classes, certain methods like toString(), equals(), and hashCode() are commonly overridden in subclasses to provide more meaningful behavior.
+
+In summary, the Object class serves as the foundation for all Java classes, providing basic functionality and a set of methods that are inherited by all objects in Java.
+
+========================================================================================================
+Q5) Write the differences between Functional and Class components in React. 
+
+In React, there are two primary ways to define components: Functional components and Class components. Here are the key differences between them:
+
+Syntax:
+
+Functional Components: Defined as JavaScript functions. They are also known as stateless components or "dumb" components because they don't manage state or have lifecycle methods.
+Class Components: Defined using ES6 classes, extending the React.Component class. They are also known as stateful components or "smart" components because they can manage state and have lifecycle methods.
+State:
+
+Functional Components: Historically, functional components were stateless. However, with the introduction of React Hooks in React 16.8, functional components can now use state and other React features using Hooks like useState, useEffect, etc.
+Class Components: Can manage state using the this.state property. State can be updated using this.setState() method, triggering a re-render of the component.
+Lifecycle Methods:
+
+Functional Components: Don't have lifecycle methods. Prior to React 16.8, functional components couldn't use lifecycle methods. However, with the introduction of Hooks, functional components can now utilize lifecycle-equivalent methods using useEffect.
+Class Components: Have lifecycle methods such as componentDidMount, componentDidUpdate, and componentWillUnmount, among others. These methods allow class components to hook into different points in the component's lifecycle.
+Readability and Conciseness:
+
+Functional Components: Generally considered more concise and easier to read, especially for simpler components. They avoid the overhead of classes and don't require the use of this.
+Class Components: Can become verbose, especially when dealing with lifecycle methods and managing state. However, they offer a clear structure and may be preferred for larger, more complex components.
+Performance:
+
+Functional Components: Typically perform better than class components due to less overhead. With the introduction of React.memo and Hooks, functional components can now optimize re-renders similar to class components.
+Class Components: May suffer from slightly worse performance due to the overhead of the class itself and the binding of this within methods.
+In recent years, functional components have become more popular, especially with the introduction of React Hooks, which provide a way to use state and other React features in functional components. However, both functional and class components are still widely used depending on the specific requirements and preferences of developers.
