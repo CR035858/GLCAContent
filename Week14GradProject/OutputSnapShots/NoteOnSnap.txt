@@ -1,0 +1,33 @@
+http://localhost:8080/glcamavenjsphiber1/index.jsp
+
+GradSnap1
+---------------------
+Clicking on "Go To Employees page"
+
+shows up page
+
+GradSnap2
+------------------------------
+AddRecord -- should allow user to add GradSnap3
+
+when clicked on Save
+should update the table and refresh list as shown below
+
+GradSnap4
+-------------
+clicking on UPdate should allow one to update corresponding record as shown below
+
+GradSnap5
+
+after updating the Record as 
+
+in GradSnap6
+
+when saved should show refreshed list as follows
+
+in GradSnap7
+
+-----------------
+Clicking on Delete say "harshas Record" should delete and show the rfereshed list as
+
+in GradSnap8

@@ -1,0 +1,7 @@
+1)Project - Maven using Archetype [Maven-ARchetype-Webapp 1.4]
+
+2) Employee Data - CRUD Operation
+
+3) JSP as Views
+
+4) Complete Configuration - using XML [Both DispatcherServlet Initializer & Hibernate Configuration]
