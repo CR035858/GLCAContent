@@ -1,0 +1,31 @@
+
+---------------------------------
+GRADED ASSMTS
+1) OOPS  
+2) DSA 
+3) Stack, Queue & Trees 
+4) DBMS 
+5) ORM & SPRING  - COMPLETED
+6) Spring REST  - COMPLETED
+7) Html & CSS  - COMPLETED
+8) Week 6 JS (Wk4,5,6) 
+9) Javascript(Wk 7,8) 
+10) React Project  
+
+--------------------
+
+LAB ASSMTS
+1) OOPS 
+2) ALgorithms 
+3) DSA 
+4) DBMS 
+5)  SPRING MVC ORM  - COMPLETED
+6) Spring REST  - COMPLETED
+7) Html & CSS  - COMPLETED
+8) Week 6 JS (Wk4,5,6) 
+9) Javascript (Wk 7,8) 
+10) React Project 
+ 
+TOTAL:
+ 10 Lab Assignments + 10 Graded Assignments
+

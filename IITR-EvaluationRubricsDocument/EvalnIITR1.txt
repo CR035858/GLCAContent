@@ -1,0 +1,59 @@
+
+
+
+Package Structure 7
+Create Operation   5  [ Code is Not written 0 ; Code written x% working x marks; 0 % working 0 marks]
+Read Opeartion  5
+Update Opeation 5
+Delete Operation 5
+--------------------------------
+One Evaluator 1 Batch
+--------------------------------
+
+Last bastches IITR  7-8 []
+Ujwal/JK/Rakesh
+[]
+---------------------------------
+GRADED ASSMTS
+1) OOPS  CS
+2) DSA CS
+3) Stack, Queue & Trees AL
+4) DBMS CS
+5) ORM & SPRING CS
+6) Spring REST CS
+7) Html & CSS AL
+8) Week 6 JS (Wk4,5,6) AL
+9) Javascript(Wk 7,8) AL
+10) React Project  AL
+
+--------------------
+LAB [codes ] GRADED  4 20/ exception
+LAB ASSMTS
+1) OOPS CS
+2) ALgorithms CS
+3) DSA AL
+4) DBMS CS
+5)  SPRING MVC ORM CS
+6) Spring REST CS
+7) Html & CSS AL
+8) Week 6 JS (Wk4,5,6) AL
+9) Javascript (Wk 7,8) AL
+10) React Project AL
+-------------------------
+LAB [codes ] GRADED  4 20/ exception
+LAB ASSMTS
+1) OOPS - CS
+2) ALgorithms - CS
+3) DSA - AL
+4) DBMS - CS
+5)  SPRING MVC ORM - CS
+6) Spring REST - CS
+7) Html & CSS - AL
+8) Week 6 JS (Wk4,5,6) - AL
+9) Javascript (Wk 7,8) - AL
+10) React Project - AL
+
+CS 5 Lab + 5 Grad
+AL 5 Lab + 5 Grad
+
+Can we make Feb end as deadline.
