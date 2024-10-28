@@ -1,0 +1,46 @@
+
+All Solutions are uploaded onto GITHUB and the path is
+
+https://github.com/CR035858/GLCAExamSolns.git
+
+===================================================================================
+Note: SUBJECTIVE
+
+For Problem 01:
+
+basic CRUD operations were the focus 
+[Optimization not being asked in QP]
+Further can optimize for id Not Found etc + Bookwith Spaces not used - used scan.next()
+(can improvize with nextLine())
+
+these can be incorporated further for optimization,
+but here focus was on CRUD
+
+Project Name : "GLCAFSBEndExamSubjSolutions"
+------------------------------------------------------------------------------------
+For Problem 02
+
+Optimization Not Taken into Consideration
+like id not found etc.
+
+Project Name : studentapi
+------------------------------------------------------------------------------------
+For Problem 03
+Project Name is "GLCASubjQuestion3OneToMany"
+
+But all the 3 Mapping are incorporated in the same Project
+
+==============================XXX=====================================================
+All Short AnswerbasedQuestions are answered in Word document named :
+"ShortAnswerBasedQuestion1"
+
+Except First Question which is a Java Project uploaded in the same Repo with 
+Project Name: GlcaFSBEndExamShortAnsSolution
+
+==========================================================================================
+
+
+
+
+
+
