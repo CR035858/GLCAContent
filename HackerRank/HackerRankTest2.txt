@@ -1,0 +1,217 @@
+Create a Spring Boot ORM/Hibernate-based MVC project that provides the REST endpoints for a basic inventory management system. For this project, the inventory system contains only the single entity named Item.
+
+ 
+
+The definitions and detailed requirements are listed below. The submission will be graded on whether the application performs data retrieval and manipulation based on given use cases exactly as described in the requirements.
+
+ 
+
+Each item data is a JSON object. Each such object has the following properties:
+
+itemId: the unique integer ID of the object
+itemName: the name of the item
+itemEnteredByUser: the name of the user entering the item
+itemEnteredDate: the timestamp at which the item is saved in the database (defaults to the current system timestamp)
+itemBuyingPrice: a Double value, up to one decimal place, denoting the item's buying price
+itemSellingPrice: a Double value, up to one decimal place, denoting the item's selling price
+itemLastModifiedDate: the timestamp at which the item is modified in the database (defaults to the current system timestamp)
+itemLastModifiedByUser: the name of the user modifying the item
+itemStatus: enum value, either AVAILABLE or SOLD
+ 
+
+Here is an example of an item data JSON object:
+
+    {
+    "itemId":1,
+    "itemName":"item_x",
+    "itemEnteredByUser":"user_x",
+    "itemEnteredDate":"2020-05-10T13:00:41.499",
+    "itemBuyingPrice":50.0,
+    "itemSellingPrice":55.0,
+    "itemLastModifiedDate":"2020-05-10T13:00:41.498",
+    "itemLastModifiedByUser":"user_y",
+    "itemStatus":"AVAILABLE"
+}
+ 
+
+Implement the /app/item REST endpoint for the following 8 operations:
+
+ 
+
+POST request to /app/item :
+
+should accept POST requests at /app/item and item data as a JSON body
+if the itemId exists in the database, then it should return status code 400
+If the itemId doesn't exist in the database, then it should insert the data and return the inserted item as a response with status code 201
+ 
+
+PUT request to /app/item/{itemId}:
+
+should accept PUT requests at /app/item/{itemId} and item data as a JSON body, where itemId is a path variable
+if the itemId exists in the database then it should update and return the updated item as a response with status code 200
+if the itemId doesn't exist in the database, it should return status code 404
+ 
+
+DELETE request to /app/item/{itemId}:
+
+should accept DELETE requests at /app/item/{itemId} where itemId is a path variable
+if the itemId exists in the database, then it should delete the specified item and return status code 200
+if the itemId doesn't exist in the database, it should return status code 400
+ 
+
+DELETE request to /app/item:
+
+should accept DELETE requests at /app/item
+should delete all the items from the database and return status code 200
+ 
+
+GET request to /app/item/{itemId}:
+
+should accept GET requests at /app/item/{itemId} where itemId is a path variable
+if the itemId exists in the database, then it should return the item with status code 200
+if the itemId doesn't exist in the database, it should return status code 404
+ 
+
+GET request to /app/item:
+
+should accept GET requests at /app/item
+should return all the items from the database with return status code 200
+ 
+
+GET request to /app/item?itemStatus={status}&itemEnteredByUser={enteredBy}:
+
+should accept GET requests at /app/item?itemStatus={status}&itemEnteredByUser={enteredBy}
+should return all the items having itemStatus=status and itemEnteredByUser=enteredBy, where status and enteredBy are request params, with status code 200
+ 
+
+GET request to /app/item?pageSize={pageSize}&page={page}&sortBy={sortByField}:
+
+should accept GET requests at /app/item?pageSize={pageSize}&page={page}&sortBy={sortByField}
+should return the requested page by paginating with pageSize and sorting by the sortBy field
+ 
+
+Implement the above 8 endpoints in the ItemController class, and the corresponding service methods in the ItemService class so that it passes all the test cases when running the provided unit tests. The project by default supports the use of the H2 database. Implement the POST request to /app/item first because testing the other methods requires POST to work correctly.
+
+ 
+
+Example requests and responses
+POST request to /app/item
+
+Request body:
+
+{
+    "itemName":"item1",
+    "itemEnteredByUser":"user1",
+    "itemBuyingPrice":50.0,
+    "itemSellingPrice":55.0
+}
+The response code is 201, and when converted to JSON, the response body is:
+
+{
+    "itemId":1,
+    "itemName":"item1",
+    "itemEnteredByUser":"user_1",
+    "itemEnteredDate":"2020-05-10T13:00:41.499",
+    "itemBuyingPrice":50.0,
+    "itemSellingPrice":55.0,
+    "itemLastModifiedDate":"2020-05-10T13:00:41.498",
+    "itemLastModifiedByUser":null,
+    "itemStatus":"AVAILABLE"
+}
+This adds a new object to the database with the given properties and itemId 1.
+
+ 2024-01-16T09:01:08.189+00:00
+
+POST request to /app/item
+
+Request body:
+
+{
+    "itemId":1
+    "itemName":"item1",
+    "itemEnteredByUser":"user1",
+    "itemBuyingPrice":50.0,
+    "itemSellingPrice":55.0
+}
+The response code is 400 since the item with that itemId already exists in the database.
+
+ 
+
+PUT request to /app/item/{itemId}
+
+Request body:
+
+{
+    "itemId":1
+    "itemName":"item2",
+    "itemLastModifiedByUser":"user2"
+}
+The response code is 200, and when converted to JSON, the response body is:
+
+{
+    "itemId":1,
+    "itemName":"item2",
+    "itemEnteredByUser":"user1",
+    "itemEnteredDate":"2020-05-10T13:00:41.499",
+    "itemBuyingPrice":50.0,
+    "itemSellingPrice":55.0,
+    "itemLastModifiedDate":"2020-05-10T13:00:41.498",
+    "itemLastModifiedByUser":user2,
+    "itemStatus":"AVAILABLE"
+}
+ 
+
+DELETE request to /app/item/1
+
+Assuming that the object with itemId 1 exists, then the response code is 200 and the specified object is deleted.
+
+ 
+
+DELETE request to /app/item
+
+The response code is 200, and this deletes all the items from the database.
+
+ 
+
+GET request to /app/item/1
+
+The response code is 200, and when converted to JSON, the response body is:
+
+{
+    "itemId":1,
+    "itemName":"item1",
+    "itemEnteredByUser":"user_1",
+    "itemEnteredDate":"2020-05-10T13:00:41.499",
+    "itemBuyingPrice":50.0,
+    "itemSellingPrice":55.0,
+    "itemLastModifiedDate":"2020-05-10T13:00:41.498",
+    "itemLastModifiedByUser":null,
+    "itemStatus":"AVAILABLE"
+}
+ 
+
+GET request to /app/item
+
+The response code is 200, and this returns the array of all the items as JSON.
+
+ 
+
+GET request to /app/item?itemStatus=AVAILABLE&itemEnteredByUser=user1
+
+The response code is 200, and this returns the matching items as a JSON response.
+
+ 
+
+GET request to /app/item?pageSize=5&page={2}&sortBy=itemName
+
+The response code is 200, and this returns page 2 sorted by itemName as a JSON response.
+
+=====================
+public Page<Library> getLibrariesCustomPaged(int pageNumber, int numberOfRecordsOnAPage) {
+		Pageable first3records = PageRequest.of(pageNumber, numberOfRecordsOnAPage);
+		return readRepsitory.findAll(first3records);
+	}
+
+	public List<Library> getLibrariesWithLatestAddedOrder() {
+		return readRepsitory.findAll(Sort.by(Direction.DESC, "id"));
+	}

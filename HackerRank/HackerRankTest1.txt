@@ -1,0 +1,25 @@
+Student- Teacher Many to Many
+
+1) /school/teacher/{teacherId}/addStudent
+
+POST Request
+assumptions
+1)Assume Given TeacherId exists
+2) RequestBody To Have Student Instance
+[can be a new Student or an existing one]
+3) assume given student has never been added to the given Teacher
+4) Return the teacher instance after adding the Student and a status code of 201
+
+
+Get Request to
+
+/school/teacher/{teacherId}/students:
+
+1) Assume the given teacherId already exists in DB
+2) Return list of students associated with that teacherId and a status code 200
+
+
+Get Request to
+/school/student/{studentId}/teachers:
+1) Assume the given {studentId} exists in DB
+2) Return the List of teachers associated with the studentId and a sttus code 200
